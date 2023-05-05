@@ -38,8 +38,8 @@ Nome: Antonio Victor
 5.1 Verificar se 3! é igual a 6
 5.2 Verificar se 5!  é igual a 120
 5.3 Verificar se 10! é igual a 3628800
-5.4 Verificar se (3!)+(3!)  é igual a 12
-5.5 Verificar se 0!  é igual a 1
+5.4 Verificar se 6!  é igual a 720
+5.5 Verificar se 0!  é igual a 0
 
 6 - Função Exponencial
 6.1 Verificar se 3² é igual a 9
@@ -72,21 +72,10 @@ Nome: Antonio Victor
 8.8 Verificar se 81 Não é igual ao número Primo. 
 
 9 - Função Par
-9.1 Verificar se 1 Não é igual a Par
-9.2 Verificar se 6 É  igual a Par
-9.3 Verificar se 122 É  igual a Par
-9.4 Verificar se 88888 É  igual a Par
-9.5 Verificar se 10001 Não é  igual a Par
-9.6 Verificar se 22660 É  igual a Par
-9.7 Verificar se 88889 Não é  igual a Par
-
-10 - Função Ímpar
-10.1 Verificar se 2 Não é  igual a ímpar
-10.2 Verificar se 9 ´É igual a ímpar
-10.3 Verificar se 15 É igual a ímpar
-10.4 Verificar se 444 Não é igual a ímpar
-10.5 Verificar se 999 É igual a ímpar
-10.6 Verificar se 33667 É igual a ímpar
-10.7 Verificar se 55788 Não é igual a ímpar
-
-
+9.1 Verificar se 1 é Impar
+9.2 Verificar se 6 é Par
+9.3 Verificar se 122 é Par
+9.4 Verificar se 88888 é Par
+9.5 Verificar se 10001 é Impar
+9.6 Verificar se 22660 é Par
+9.7 Verificar se 88889 é Impar

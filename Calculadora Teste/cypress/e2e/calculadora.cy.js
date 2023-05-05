@@ -1,62 +1,63 @@
 /// <reference types="cypress" />
 
-beforeEach(()=>{
-    cy.visit('http://127.0.0.1:5500/index.html')
+beforeEach(() => {
+    cy.visit('https://calculadoraautomatizida.netlify.app/')
 })
 
-describe('Testando a Função Soma', ()=>{
+describe('Testando a Função Soma', () => {
 
 
-it('Testando 6+7',()=>{
-cy.get('#numero1').click()
-cy.get('#numero1').type('6')
-cy.get('#numero2').click()
-cy.get('#numero2').type('7')
-cy.get('#soma').click()
-cy.get('#resultadoDoCalculo').should("have.text", '13')
+    it('Testando 6+7', () => {
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('6')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('7')
+        cy.get('#soma').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '13')
 
-} )
-it('Testando 8+0' ,()=>{
-    cy.get('.limparResultado > button').click()
-    cy.get('#numero1').click()
-    cy.get('#numero1').type('8')
-    cy.get('#numero2').click()
-    cy.get('#numero2').type('0')
-    cy.get('#soma').click()
-    cy.get('#resultadoDoCalculo').should("have.text", '8')
+    })
+    it('Testando 8+0', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('8')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('0')
+        cy.get('#soma').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '8')
+    })
+    it('Testando 0+0', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('0')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('0')
+        cy.get('#soma').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '0')
+    })
+    it('Testando 1+(-3)', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('1')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('-3')
+        cy.get('#soma').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '-2')
+    })
+    it('Testando 500+300', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('500')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('300')
+        cy.get('#soma').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '800')
+    })
+
 })
-it('Testando 0+0' ,()=>{
-    cy.get('.limparResultado > button').click()
-    cy.get('#numero1').click()
-    cy.get('#numero1').type('0')
-    cy.get('#numero2').click()
-    cy.get('#numero2').type('0')
-    cy.get('#soma').click()
-    cy.get('#resultadoDoCalculo').should("have.text", '0')
-})
-it('Testando 1+(-3)' ,()=>{
-    cy.get('.limparResultado > button').click()
-    cy.get('#numero1').click()
-    cy.get('#numero1').type('1')
-    cy.get('#numero2').click()
-    cy.get('#numero2').type('-3')
-    cy.get('#soma').click()
-    cy.get('#resultadoDoCalculo').should("have.text", '-2')
-})
-it('Testando 500+300' ,()=>{
-    cy.get('.limparResultado > button').click()
-    cy.get('#numero1').click()
-    cy.get('#numero1').type('500')
-    cy.get('#numero2').click()
-    cy.get('#numero2').type('300')
-    cy.get('#soma').click()
-    cy.get('#resultadoDoCalculo').should("have.text", '800')
-})
 
-} )
+describe('Testando a Função Subtrair', () => {
 
-describe('Testando a Função Subtrair', ()=>{
-    it('Testando 5-5' ,()=>{
+    it('Testando 5-5', () => {
         cy.get('.limparResultado > button').click()
         cy.get('#numero1').click()
         cy.get('#numero1').type('5')
@@ -65,233 +66,503 @@ describe('Testando a Função Subtrair', ()=>{
         cy.get('#subtrair').click()
         cy.get('#resultadoDoCalculo').should("have.text", '0')
     })
-    it('Testando 1+(-3)' ,()=>{
+    it('Testando 10-11', () => {
         cy.get('.limparResultado > button').click()
         cy.get('#numero1').click()
-        cy.get('#numero1').type('1')
+        cy.get('#numero1').type('10')
         cy.get('#numero2').click()
-        cy.get('#numero2').type('-3')
-        cy.get('#soma').click()
-        cy.get('#resultadoDoCalculo').should("have.text", '-2')
+        cy.get('#numero2').type('11')
+        cy.get('#subtrair').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '-1')
     })
-    it('Testando 500+300' ,()=>{
+    it('Testando -33-22', () => {
         cy.get('.limparResultado > button').click()
         cy.get('#numero1').click()
-        cy.get('#numero1').type('500')
+        cy.get('#numero1').type('-33')
         cy.get('#numero2').click()
-        cy.get('#numero2').type('300')
-        cy.get('#soma').click()
-        cy.get('#resultadoDoCalculo').should("have.text", '800')
+        cy.get('#numero2').type('22')
+        cy.get('#subtrair').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '-55')
     })
-        
+
+
+    it('Testando 11-33', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('11')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('33')
+        cy.get('#subtrair').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '-22')
+    })
+
+    it('Testando -1+0', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('-1')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('(0)')
+        cy.get('#subtrair').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '-1')
+    })
+
 })
-describe('Testando a Função Dividir', ()=>{
-    it('Testando 0+0' ,()=>{
+
+
+describe('Testando a Função Dividir', () => {
+
+    it('Testando 6/2', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('6')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('2')
+        cy.get('#dividir').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '3')
+    })
+    it('Testando 81/9', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('81')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('9')
+        cy.get('#dividir').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '9')
+    })
+    it('Testando 122/3', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('122')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('3')
+        cy.get('#dividir').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '40.666666666666664')
+    })
+
+    it('Testando 9/0', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('9')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('0')
+        cy.get('#dividir').click()
+        cy.get('#resultadoDoCalculo').should("have.text", 'Não é Possivel dividir Por 0')
+    })
+
+    it('Testando 0/2', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('0')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('2')
+        cy.get('#dividir').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '0')
+    })
+
+    it('Testando 2/3', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('2')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('3')
+        cy.get('#dividir').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '0.6666666666666666')
+    })
+
+})
+describe('Testando a Função Multiplicação', () => {
+
+    it('Testando 6*3', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('6')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('3')
+        cy.get('#multiplicar').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '18')
+    })
+    it('Testando 8*1', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('8')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('1')
+        cy.get('#multiplicar').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '8')
+    })
+    it('Testando 0*0', () => {
         cy.get('.limparResultado > button').click()
         cy.get('#numero1').click()
         cy.get('#numero1').type('0')
         cy.get('#numero2').click()
         cy.get('#numero2').type('0')
-        cy.get('#soma').click()
+        cy.get('#multiplicar').click()
         cy.get('#resultadoDoCalculo').should("have.text", '0')
     })
-    it('Testando 1+(-3)' ,()=>{
+    it('Testando 1*0', () => {
         cy.get('.limparResultado > button').click()
         cy.get('#numero1').click()
         cy.get('#numero1').type('1')
         cy.get('#numero2').click()
-        cy.get('#numero2').type('-3')
-        cy.get('#soma').click()
-        cy.get('#resultadoDoCalculo').should("have.text", '-2')
+        cy.get('#numero2').type('0')
+        cy.get('#multiplicar').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '0')
     })
-    it('Testando 500+300' ,()=>{
+    it('Testando 6*100', () => {
         cy.get('.limparResultado > button').click()
         cy.get('#numero1').click()
-        cy.get('#numero1').type('500')
+        cy.get('#numero1').type('6')
         cy.get('#numero2').click()
-        cy.get('#numero2').type('300')
-        cy.get('#soma').click()
-        cy.get('#resultadoDoCalculo').should("have.text", '800')
+        cy.get('#numero2').type('100')
+        cy.get('#multiplicar').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '600')
     })
-    
+
 })
-describe('Testando a Função Multiplicação', ()=>{
-    it('Testando 0+0' ,()=>{
+describe('Testando a Função Fatorial', () => {
+
+    it('Testando 3!', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('3')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('0')
+        cy.get('#fatorial').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '6')
+    })
+    it('Testando 5!', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('5')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('0')
+        cy.get('#fatorial').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '120')
+    })
+    it('Testando 10!', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('10')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('0')
+        cy.get('#fatorial').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '3628800')
+    })
+    it('Testando 6!', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('3')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('3')
+        cy.get('#fatorial').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '720')
+    })
+    it('Testando 0!', () => {
         cy.get('.limparResultado > button').click()
         cy.get('#numero1').click()
         cy.get('#numero1').type('0')
         cy.get('#numero2').click()
         cy.get('#numero2').type('0')
-        cy.get('#soma').click()
+        cy.get('#fatorial').click()
         cy.get('#resultadoDoCalculo').should("have.text", '0')
     })
-    it('Testando 1+(-3)' ,()=>{
-        cy.get('.limparResultado > button').click()
-        cy.get('#numero1').click()
-        cy.get('#numero1').type('1')
-        cy.get('#numero2').click()
-        cy.get('#numero2').type('-3')
-        cy.get('#soma').click()
-        cy.get('#resultadoDoCalculo').should("have.text", '-2')
-    })
-    it('Testando 500+300' ,()=>{
-        cy.get('.limparResultado > button').click()
-        cy.get('#numero1').click()
-        cy.get('#numero1').type('500')
-        cy.get('#numero2').click()
-        cy.get('#numero2').type('300')
-        cy.get('#soma').click()
-        cy.get('#resultadoDoCalculo').should("have.text", '800')
-    })
-    
+
 })
-describe('Testando a Função Fatorial', ()=>{
-    it('Testando 0+0' ,()=>{
+describe('Testando a Função Exponencial', () => {
+
+    it('Testando 3**2', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('3')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('2')
+        cy.get('#expoente').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '9')
+    })
+    it('Testando 5**3', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('5')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('3')
+        cy.get('#expoente').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '125')
+    })
+    it('Testando 4**1', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('4')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('1')
+        cy.get('#expoente').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '4')
+    })
+    it('Testando 8**0', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('8')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('0')
+        cy.get('#expoente').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '1')
+    })
+    it('Testando 0**8', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('0')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('8')
+        cy.get('#expoente').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '0')
+    })
+    it('Testando -2**2', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('-2')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('2')
+        cy.get('#expoente').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '-4')
+    })
+    it('Testando 2**(-2)', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('2')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('(-2)')
+        cy.get('#expoente').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '0.25')
+    })
+
+
+})
+describe('Testando a Função Raiz Quadrada', () => {
+
+    it('Testando √81', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('81')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('0')
+        cy.get('#raizQuadrada').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '9')
+    })
+    it('Testando √9', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('9')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('0')
+        cy.get('#raizQuadrada').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '3')
+    })
+    it('Testando √400', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('400')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('0')
+        cy.get('#raizQuadrada').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '20')
+    })
+    it('Testando √25', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('25')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('0')
+        cy.get('#raizQuadrada').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '5')
+    })
+    it('Testando √8', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('8')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('0')
+        cy.get('#raizQuadrada').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '2.8284271247461903')
+    })
+    it('Testando √0', () => {
         cy.get('.limparResultado > button').click()
         cy.get('#numero1').click()
         cy.get('#numero1').type('0')
         cy.get('#numero2').click()
         cy.get('#numero2').type('0')
-        cy.get('#soma').click()
+        cy.get('#raizQuadrada').click()
         cy.get('#resultadoDoCalculo').should("have.text", '0')
     })
-    it('Testando 1+(-3)' ,()=>{
+    it('Testando √1', () => {
         cy.get('.limparResultado > button').click()
         cy.get('#numero1').click()
         cy.get('#numero1').type('1')
-        cy.get('#numero2').click()
-        cy.get('#numero2').type('-3')
-        cy.get('#soma').click()
-        cy.get('#resultadoDoCalculo').should("have.text", '-2')
-    })
-    it('Testando 500+300' ,()=>{
-        cy.get('.limparResultado > button').click()
-        cy.get('#numero1').click()
-        cy.get('#numero1').type('500')
-        cy.get('#numero2').click()
-        cy.get('#numero2').type('300')
-        cy.get('#soma').click()
-        cy.get('#resultadoDoCalculo').should("have.text", '800')
-    })
-    
-})
-describe('Testando a Função Exponencial', ()=>{
-    it('Testando 0+0' ,()=>{
-        cy.get('.limparResultado > button').click()
-        cy.get('#numero1').click()
-        cy.get('#numero1').type('0')
         cy.get('#numero2').click()
         cy.get('#numero2').type('0')
-        cy.get('#soma').click()
-        cy.get('#resultadoDoCalculo').should("have.text", '0')
+        cy.get('#raizQuadrada').click()
+        cy.get('#resultadoDoCalculo').should("have.text", '1')
     })
-    it('Testando 1+(-3)' ,()=>{
+    it('Testando √(-2)', () => {
         cy.get('.limparResultado > button').click()
         cy.get('#numero1').click()
-        cy.get('#numero1').type('1')
-        cy.get('#numero2').click()
-        cy.get('#numero2').type('-3')
-        cy.get('#soma').click()
-        cy.get('#resultadoDoCalculo').should("have.text", '-2')
-    })
-    it('Testando 500+300' ,()=>{
-        cy.get('.limparResultado > button').click()
-        cy.get('#numero1').click()
-        cy.get('#numero1').type('500')
-        cy.get('#numero2').click()
-        cy.get('#numero2').type('300')
-        cy.get('#soma').click()
-        cy.get('#resultadoDoCalculo').should("have.text", '800')
-    })
-    
-})
-describe('Testando a Função Raiz Quadrada', ()=>{
-    it('Testando 0+0' ,()=>{
-        cy.get('.limparResultado > button').click()
-        cy.get('#numero1').click()
-        cy.get('#numero1').type('0')
+        cy.get('#numero1').type('(-2)')
         cy.get('#numero2').click()
         cy.get('#numero2').type('0')
-        cy.get('#soma').click()
-        cy.get('#resultadoDoCalculo').should("have.text", '0')
+        cy.get('#raizQuadrada').click()
+        cy.get('#resultadoDoCalculo').should("have.text", 'Error')
     })
-    it('Testando 1+(-3)' ,()=>{
-        cy.get('.limparResultado > button').click()
-        cy.get('#numero1').click()
-        cy.get('#numero1').type('1')
-        cy.get('#numero2').click()
-        cy.get('#numero2').type('-3')
-        cy.get('#soma').click()
-        cy.get('#resultadoDoCalculo').should("have.text", '-2')
-    })
-    it('Testando 500+300' ,()=>{
-        cy.get('.limparResultado > button').click()
-        cy.get('#numero1').click()
-        cy.get('#numero1').type('500')
-        cy.get('#numero2').click()
-        cy.get('#numero2').type('300')
-        cy.get('#soma').click()
-        cy.get('#resultadoDoCalculo').should("have.text", '800')
-    })
-    
+
 })
-describe('Testando a Função Numero Primo', ()=>{
-    it('Testando 0+0' ,()=>{
+describe('Testando a Função Numero Primo', () => {
+
+    it('Testando 2', () => {
         cy.get('.limparResultado > button').click()
         cy.get('#numero1').click()
-        cy.get('#numero1').type('0')
+        cy.get('#numero1').type('2')
         cy.get('#numero2').click()
         cy.get('#numero2').type('0')
-        cy.get('#soma').click()
-        cy.get('#resultadoDoCalculo').should("have.text", '0')
+        cy.get('#numeroPrimo').click()
+        cy.get('#resultadoDoCalculo').should("have.text", 'É primo')
     })
-    it('Testando 1+(-3)' ,()=>{
+
+    it('Testando 3', () => {
         cy.get('.limparResultado > button').click()
         cy.get('#numero1').click()
-        cy.get('#numero1').type('1')
-        cy.get('#numero2').click()
-        cy.get('#numero2').type('-3')
-        cy.get('#soma').click()
-        cy.get('#resultadoDoCalculo').should("have.text", '-2')
-    })
-    it('Testando 500+300' ,()=>{
-        cy.get('.limparResultado > button').click()
-        cy.get('#numero1').click()
-        cy.get('#numero1').type('500')
-        cy.get('#numero2').click()
-        cy.get('#numero2').type('300')
-        cy.get('#soma').click()
-        cy.get('#resultadoDoCalculo').should("have.text", '800')
-    })
-    
-})
-describe('Testando a Função Impar ou Par', ()=>{
-    it('Testando 0+0' ,()=>{
-        cy.get('.limparResultado > button').click()
-        cy.get('#numero1').click()
-        cy.get('#numero1').type('0')
+        cy.get('#numero1').type('3')
         cy.get('#numero2').click()
         cy.get('#numero2').type('0')
-        cy.get('#soma').click()
-        cy.get('#resultadoDoCalculo').should("have.text", '0')
+        cy.get('#numeroPrimo').click()
+        cy.get('#resultadoDoCalculo').should("have.text", 'É primo')
     })
-    it('Testando 1+(-3)' ,()=>{
+
+    it('Testando 1', () => {
         cy.get('.limparResultado > button').click()
         cy.get('#numero1').click()
         cy.get('#numero1').type('1')
         cy.get('#numero2').click()
-        cy.get('#numero2').type('-3')
-        cy.get('#soma').click()
-        cy.get('#resultadoDoCalculo').should("have.text", '-2')
+        cy.get('#numero2').type('0')
+        cy.get('#numeroPrimo').click()
+        cy.get('#resultadoDoCalculo').should("have.text", 'Não é primo')
     })
-    it('Testando 500+300' ,()=>{
+
+    it('Testando 7', () => {
         cy.get('.limparResultado > button').click()
         cy.get('#numero1').click()
-        cy.get('#numero1').type('500')
+        cy.get('#numero1').type('7')
         cy.get('#numero2').click()
-        cy.get('#numero2').type('300')
-        cy.get('#soma').click()
-        cy.get('#resultadoDoCalculo').should("have.text", '800')
+        cy.get('#numero2').type('0')
+        cy.get('#numeroPrimo').click()
+        cy.get('#resultadoDoCalculo').should("have.text", 'É primo')
     })
-    
+
+    it('Testando 12', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('12')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('0')
+        cy.get('#numeroPrimo').click()
+        cy.get('#resultadoDoCalculo').should("have.text", 'Não é primo')
+    })
+    it('Testando 13', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('13')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('0')
+        cy.get('#numeroPrimo').click()
+        cy.get('#resultadoDoCalculo').should("have.text", 'É primo')
+    })
+    it('Testando 17', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('17')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('0')
+        cy.get('#numeroPrimo').click()
+        cy.get('#resultadoDoCalculo').should("have.text", 'É primo')
+    })
+
+    it('Testando se 81 não é primo', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('81')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('0')
+        cy.get('#numeroPrimo').click()
+        cy.get('#resultadoDoCalculo').should("have.text", 'Não é primo')
+    })
+
+})
+
+describe('Testando a Função Impar ou Par', () => {
+
+    it('Testando se 1 é Impar', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('1')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('0')
+        cy.get('#verificarImparPar').click()
+        cy.get('#resultadoDoCalculo').should("have.text", 'impar')
+    })
+    it('Testando se 6 é par', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('6')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('0')
+        cy.get('#verificarImparPar').click()
+        cy.get('#resultadoDoCalculo').should("have.text", 'par')
+    })
+
+    it('Testando se 122 é Impar', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('122')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('0')
+        cy.get('#verificarImparPar').click()
+        cy.get('#resultadoDoCalculo').should("have.text", 'par')
+    })
+
+    it('Testando se 88888 é Impar', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('88888')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('0')
+        cy.get('#verificarImparPar').click()
+        cy.get('#resultadoDoCalculo').should("have.text", 'par')
+    })
+
+    it('Testando se 10001 é Impar', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('10001')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('0')
+        cy.get('#verificarImparPar').click()
+        cy.get('#resultadoDoCalculo').should("have.text", 'impar')
+    })
+
+    it('Testando se 22660 se é Impar', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('22660')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('0')
+        cy.get('#verificarImparPar').click()
+        cy.get('#resultadoDoCalculo').should("have.text", 'par')
+    })
+
+    it('Testando se 88889 é Impar', () => {
+        cy.get('.limparResultado > button').click()
+        cy.get('#numero1').click()
+        cy.get('#numero1').type('88889')
+        cy.get('#numero2').click()
+        cy.get('#numero2').type('0')
+        cy.get('#verificarImparPar').click()
+        cy.get('#resultadoDoCalculo').should("have.text", 'impar')
+    })
+
 })
