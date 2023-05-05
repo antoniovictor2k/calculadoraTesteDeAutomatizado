@@ -1,0 +1,92 @@
+Testes Automatizados 
+
+
+Nome: Antonio Victor
+
+1 - Função somar
+1.1 Verificar se 6+7 é igual a 13
+1.2 Verificar se 8+0 é igual a 8
+1.3 Verificar se 0+0 é igual a 0
+1.4 Verificar se 1(-3) é igual a -2 
+1.5 Verificar se 500+300 é igual a 800
+
+2 - Função subtrair
+2.1 Verificar se 5-5 é igual a 0
+2.2 Verificar se 10-11 é igual a -1
+2.3 Verificar se -33-22 é igual a  -55
+2.4 Verificar se -33+11 é igual a -22
+2.5 Verificar se -1+0 é igual a -1
+
+3 - Função Dividir
+3.1 Verificar se 6/2 é igual a 3
+3.2 Verificar se 81/9 é igual a 9
+3.3 Verificar se 122/3 é igual a 40,666…
+3.4 Verificar se 9/0 é igual a Error
+3.5 Verificar se 0/2 é igual a 0
+3.6 Verificar se 2/3 é igual a 0,666…
+
+
+4 - Função Multiplicação
+4.1 Verificar se 6*3 é igual a 18
+4.2 Verificar se 8*1 é igual a 8
+4.3 Verificar se  0*0 é igual a  0
+4.4 Verificar se 1*0 é igual a 0
+4.5 Verificar se 6*100 é igual a 600
+
+
+5 - Função Fatorial
+5.1 Verificar se 3! é igual a 6
+5.2 Verificar se 5!  é igual a 120
+5.3 Verificar se 10! é igual a 3628800
+5.4 Verificar se (3!)+(3!)  é igual a 12
+5.5 Verificar se 0!  é igual a 1
+
+6 - Função Exponencial
+6.1 Verificar se 3² é igual a 9
+6.2 Verificar se 5³ é igual a  125
+6.3 Verificar se 4¹  é igual a 4
+6.4 Verificar se 8**0 é igual a 1
+6.5 Verificar se 0**8  é igual a 0 
+6.6 Verificar se -2**2  é igual a -4
+6.7 Verificar se 2**(-2)  é igual a 0,25
+
+
+7 - Função Raiz Quadrada
+7.1 Verificar se √81 é igual a  9
+7.2 Verificar se  √9 é igual a  3
+7.3 Verificar se  √400 é igual a 20
+7.4 Verificar se √25 é igual a  5
+7.5 Verificar se √8 é igual a  2,828…
+7.6 Verificar se  √0 é igual a 0
+7.7 Verificar se  √1 é igual a 1 
+7.8 Verificar se  √(-2) é igual a Error
+
+8 - Função Número Primo (Conceito: Nº divisível por 1 e ele mesmo.)
+8.1 Verificar se 2 É igual a Número Primo
+8.2 Verificar se 3 É igual a Número Primo
+8.3 Verificar se 1 Não é igual a Número Primo
+8.4 Verificar se 7 É igual a Número Primo
+8.5 Verificar se  12 Não é igual a Número Primo
+8.6 Verificar se 13 É igual a Número Primo
+8.7 Verificar se 17 É igual a Número Primo 
+8.8 Verificar se 81 Não é igual ao número Primo. 
+
+9 - Função Par
+9.1 Verificar se 1 Não é igual a Par
+9.2 Verificar se 6 É  igual a Par
+9.3 Verificar se 122 É  igual a Par
+9.4 Verificar se 88888 É  igual a Par
+9.5 Verificar se 10001 Não é  igual a Par
+9.6 Verificar se 22660 É  igual a Par
+9.7 Verificar se 88889 Não é  igual a Par
+
+10 - Função Ímpar
+10.1 Verificar se 2 Não é  igual a ímpar
+10.2 Verificar se 9 ´É igual a ímpar
+10.3 Verificar se 15 É igual a ímpar
+10.4 Verificar se 444 Não é igual a ímpar
+10.5 Verificar se 999 É igual a ímpar
+10.6 Verificar se 33667 É igual a ímpar
+10.7 Verificar se 55788 Não é igual a ímpar
+
+
